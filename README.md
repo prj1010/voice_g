@@ -17,11 +17,10 @@ Open [http://localhost:8080](http://localhost:8080). Pick a language, then **Try
 
 The repo already has a [render.yaml](render.yaml) Blueprint.
 
-1. Push this repo to GitHub (already at [prj1010/voice_g](https://github.com/prj1010/voice_g)).
-2. Open [Render](https://dashboard.render.com) and sign in.
-3. Click **New → Blueprint**.
-4. Connect GitHub if asked, then pick **prj1010/voice_g**.
-5. Apply the Blueprint. Render builds with `npm ci --include=dev && npm run build` and starts with `npm start`.
+1. Open [Render](https://dashboard.render.com) and sign in with the same GitHub account that owns `prj1010/voice_g`.
+2. Click **New → Blueprint** (or open the existing Warmline service).
+3. Pick **prj1010/voice_g**, branch `main`.
+4. Render builds with `npm install --include=dev && npm run build` and starts with `npm start`.
 
 Or create a **Web Service** by hand:
 
@@ -29,7 +28,7 @@ Or create a **Web Service** by hand:
 | --- | --- |
 | Runtime | Node |
 | Branch | `main` |
-| Build command | `npm ci --include=dev && npm run build` |
+| Build command | `npm install --include=dev && npm run build` |
 | Start command | `npm start` |
 | Instance | Free |
 
@@ -42,7 +41,7 @@ Environment variables (Blueprint sets these):
 | `NODE_VERSION` | `22` |
 | `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` | `1` |
 
-Render supplies `PORT`. You do not need a database for this demo.
+Render supplies `PORT`. You do not need a database or a `.env` file for this demo.
 
 The first deploy takes a few minutes. The free instance sleeps after idle traffic; the next visit may wait ~30 seconds.
 
