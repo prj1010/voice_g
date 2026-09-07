@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0b0c;
+  --color-fg: #f1f1f3;
+  --color-muted: #9a9a9e;
+  --color-subtle: #6e6e72;
+  --color-surface: #141416;
+  --color-raised: #1c1c1f;
+  --color-border: #2a2a2e;
+  --color-accent: #8fa387;
+  --color-accent-fg: #0b0b0c;
+  --color-danger: #c45c4a;
+  --color-warn: #c4a35a;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-indic: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Tamil",
+    "Noto Sans Telugu", ui-sans-serif, sans-serif;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-indic {
+  font-family: var(--font-indic);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

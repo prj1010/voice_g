@@ -1,0 +1,19 @@
+services:
+  - type: web
+    runtime: node
+    name: warmline
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NITRO_PRESET
+        value: render-com
+      - key: HOST
+        value: "0.0.0.0"
+      - key: NODE_VERSION
+        value: "22"
+      - key: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD
+        value: "1"
